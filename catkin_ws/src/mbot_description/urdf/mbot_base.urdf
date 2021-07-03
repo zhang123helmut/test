@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<robot name="mbot">
+    <link name="base_link">
+        <visual>
+            <origin xyz=" 0 0 0" rpy="0 0 0" />
+            <!-- link坐标位置，放在最中央 ，xyz单位是米，rpy单位是弧度-->
+            <geometry>
+                <cylinder length="0.16" radius="0.20"/>
+            </geometry>
+            <!-- 机器人的外观效果，使用圆柱体，高0.16，半径0.20 -->
+            <material name="yellow">
+                <color rgba="1 0.4 0 1"/>
+            </material>
+             <!--  通过rgba来描述颜色，颜色命名为yellow,a为1是不透明-->
+        </visual>
+        <!--visual指的是一些物理属性的标签 -->
+    </link>
+</robot>
+
