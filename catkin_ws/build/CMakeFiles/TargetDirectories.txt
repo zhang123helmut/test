@@ -71,6 +71,13 @@
 /home/annake/test/catkin_ws/build/arbotix_ros/arbotix_sensors/CMakeFiles/rebuild_cache.dir
 /home/annake/test/catkin_ws/build/arbotix_ros/arbotix_sensors/CMakeFiles/edit_cache.dir
 /home/annake/test/catkin_ws/build/arbotix_ros/arbotix_sensors/CMakeFiles/test.dir
+/home/annake/test/catkin_ws/build/mbot_gazebo/CMakeFiles/install/strip.dir
+/home/annake/test/catkin_ws/build/mbot_gazebo/CMakeFiles/install/local.dir
+/home/annake/test/catkin_ws/build/mbot_gazebo/CMakeFiles/install.dir
+/home/annake/test/catkin_ws/build/mbot_gazebo/CMakeFiles/list_install_components.dir
+/home/annake/test/catkin_ws/build/mbot_gazebo/CMakeFiles/rebuild_cache.dir
+/home/annake/test/catkin_ws/build/mbot_gazebo/CMakeFiles/edit_cache.dir
+/home/annake/test/catkin_ws/build/mbot_gazebo/CMakeFiles/test.dir
 /home/annake/test/catkin_ws/build/gazebo_ros_demos/rrbot_control/CMakeFiles/install/strip.dir
 /home/annake/test/catkin_ws/build/gazebo_ros_demos/rrbot_control/CMakeFiles/install/local.dir
 /home/annake/test/catkin_ws/build/gazebo_ros_demos/rrbot_control/CMakeFiles/install.dir

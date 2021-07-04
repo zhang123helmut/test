@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <robot name="realsense" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find realsense_ros_gazebo)/xacro/tracker.xacro"/>
-  <xacro:include filename="$(find realsense_ros_gazebo)/xacro/depthcam.xacro"/>
+  <xacro:include filename="$(find mbot_description)/urdf/sensors/tracker.xacro"/>
+  <xacro:include filename="$(find mbot_description)/urdf/sensors/depthcam.xacro"/>
 
    <link name="base_footprint"/>
 

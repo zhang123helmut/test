@@ -59,6 +59,7 @@ all: arbotix_ros/arbotix_controllers/all
 all: arbotix_ros/arbotix_firmware/all
 all: arbotix_ros/arbotix_python/all
 all: arbotix_ros/arbotix_sensors/all
+all: mbot_gazebo/all
 all: gazebo_ros_demos/rrbot_control/all
 all: gazebo_ros_demos/rrbot_description/all
 all: gazebo_ros_demos/rrbot_gazebo/all
@@ -75,6 +76,7 @@ preinstall: arbotix_ros/arbotix_controllers/preinstall
 preinstall: arbotix_ros/arbotix_firmware/preinstall
 preinstall: arbotix_ros/arbotix_python/preinstall
 preinstall: arbotix_ros/arbotix_sensors/preinstall
+preinstall: mbot_gazebo/preinstall
 preinstall: gazebo_ros_demos/rrbot_control/preinstall
 preinstall: gazebo_ros_demos/rrbot_description/preinstall
 preinstall: gazebo_ros_demos/rrbot_gazebo/preinstall
@@ -96,6 +98,7 @@ clean: arbotix_ros/arbotix_controllers/clean
 clean: arbotix_ros/arbotix_firmware/clean
 clean: arbotix_ros/arbotix_python/clean
 clean: arbotix_ros/arbotix_sensors/clean
+clean: mbot_gazebo/clean
 clean: gazebo_ros_demos/rrbot_control/clean
 clean: gazebo_ros_demos/rrbot_description/clean
 clean: gazebo_ros_demos/rrbot_gazebo/clean
@@ -442,6 +445,24 @@ mbot_description/preinstall:
 mbot_description/clean: mbot_description/CMakeFiles/mbot_description_xacro_generated_to_devel_space_.dir/clean
 
 .PHONY : mbot_description/clean
+
+#=============================================================================
+# Directory level rules for directory mbot_gazebo
+
+# Recursive "all" directory target.
+mbot_gazebo/all:
+
+.PHONY : mbot_gazebo/all
+
+# Recursive "preinstall" directory target.
+mbot_gazebo/preinstall:
+
+.PHONY : mbot_gazebo/preinstall
+
+# Recursive "clean" directory target.
+mbot_gazebo/clean:
+
+.PHONY : mbot_gazebo/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir
