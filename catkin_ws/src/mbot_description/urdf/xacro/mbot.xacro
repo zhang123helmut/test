@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<robot name="arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:include filename="$(find mbot_description)/urdf/xacro/mbot_base.xacro" /> <!-- 包含文件 -->
-    <xacro:mbot_base/>    <!-- 调用宏定义 -->
-</robot>
-
