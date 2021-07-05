@@ -2,7 +2,7 @@
   <world name='default'>
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose>0 0 10 0 -0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
       <specular>0.2 0.2 0.2 1</specular>
       <attenuation>
@@ -86,9 +86,8 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-    
     <model name='Garage_1'>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>5.18016 1.59323 0 0 -0 0</pose>
       <link name='Wall_0'>
         <pose>0 -1.425 0 0 -0 0</pose>
         <visual name='Wall_0_Visual_0'>
@@ -647,57 +646,57 @@
       <static>1</static>
     </model>
     <state world_name='default'>
-      <sim_time>36788 912000000</sim_time>
-      <real_time>45 696852291</real_time>
-      <wall_time>1625401126 45696073</wall_time>
-      <iterations>45279</iterations>
+      <sim_time>36 940000000</sim_time>
+      <real_time>37 276128776</real_time>
+      <wall_time>1625489036 8477620</wall_time>
+      <iterations>36940</iterations>
       <model name='Garage_1'>
-        <pose>-0.922682 1.57332 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='Wall_0'>
-          <pose>-0.922682 0.14832 0 0 -0 0</pose>
+          <pose>0 -1.425 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_11'>
-          <pose>-1.85768 1.57332 0 0 -0 1.5708</pose>
+          <pose>-0.935 0 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_13'>
-          <pose>0.152318 1.57332 0 0 -0 1.5708</pose>
+          <pose>1.075 0 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_15'>
-          <pose>2.15232 1.57332 0 0 -0 1.5708</pose>
+          <pose>3.075 0 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_3'>
-          <pose>-5.84768 1.57332 0 0 -0 1.5708</pose>
+          <pose>-4.925 0 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_5'>
-          <pose>4.00232 1.57332 0 0 -0 1.5708</pose>
+          <pose>4.925 0 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_7'>
-          <pose>-0.922682 2.99832 0 0 -0 0</pose>
+          <pose>0 1.425 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_9'>
-          <pose>-3.84768 1.57332 0 0 -0 1.5708</pose>
+          <pose>-2.925 0 0 0 -0 1.5708</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -719,7 +718,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>0.707729 -12.8125 10.2737 -0 0.715644 1.52419</pose>
+        <pose>0.630458 -17.2099 15.6974 -0 0.660796 1.46919</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>

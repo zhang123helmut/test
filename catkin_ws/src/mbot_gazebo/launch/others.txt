@@ -1,0 +1,18 @@
+<!-- Load the URDF into the ROS Parameter Server -->
+	<param name="robot_description" textfile=$(find mbot_description)/urdf/mbot.xacro'" /> 
+	
+	<!-- Spawn a robot into Gazebo -->
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" type="spawn_model" respawn="false" output="screen" 
+       args="-param robot_description -urdf -model mbot" />
+       
+       
+             
+	<!-- send fake joint values -->
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+	<param name="use_gui" value="TRUE"/>
+
+	<!-- Combine joint values -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+     <param name="publish_frequency" type="double" value="50.0" />       
+
+	

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <robot name="mbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    	
+
     <xacro:property name="M_PI" value="3.1415926"/>
-    <xacro:property name="base_mass"   value="20" />     
+    <xacro:property name="base_mass"   value="20" /> 
     <xacro:property name="base_radius" value="0.20"/>
     <xacro:property name="base_length" value="0.16"/>
 
@@ -13,9 +13,20 @@
     <xacro:property name="wheel_joint_z" value="0.05"/>
 
     <xacro:property name="caster_mass"    value="0.5" /> 
-    <xacro:property name="caster_radius" value="0.015"/> 
+    <xacro:property name="caster_radius"  value="0.015"/>
     <xacro:property name="caster_joint_x" value="0.18"/>
-    <xacro:include filename="materials.xacro" />
+
+
+    <material name="yellow">
+        <color rgba="1 0.4 0 1"/>
+    </material>
+    <material name="black">
+        <color rgba="0 0 0 0.95"/>
+    </material>
+    <material name="gray">
+        <color rgba="0.75 0.75 0.75 1"/>
+    </material>
+
 
     <xacro:macro name="sphere_inertial_matrix" params="m r">
         <inertial>
@@ -35,9 +46,8 @@
                 izz="${m*r*r/2}" /> 
         </inertial>
     </xacro:macro>
-   
-    <!--classis motorwheel--> 
-    <!--prefix（left or right） reflect（mirror relationship）-->
+
+
     <xacro:macro name="wheel" params="prefix reflect">
         <joint name="${prefix}_wheel_joint" type="continuous">
             <origin xyz="0 ${reflect*wheel_joint_y} ${-wheel_joint_z}" rpy="0 0 0"/>
@@ -80,9 +90,9 @@
             </actuator>
         </transmission>
     </xacro:macro>
-    
-   <!--caster-->
-     <xacro:macro name="caster" params="prefix reflect">
+
+
+    <xacro:macro name="caster" params="prefix reflect">
         <joint name="${prefix}_caster_joint" type="continuous">
             <origin xyz="${reflect*caster_joint_x} 0 ${-(base_length/2 + caster_radius)}" rpy="0 0 0"/>
             <parent link="base_link"/>
@@ -113,9 +123,8 @@
             <material>Gazebo/Black</material>
         </gazebo>
     </xacro:macro>
-    
-    <!--base_footprint -->
-        <xacro:macro name="mbot_base"> 
+
+    <xacro:macro name="mbot_base_gazebo">
         <link name="base_footprint">
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
@@ -155,12 +164,12 @@
         <gazebo reference="base_link">
             <material>Gazebo/Blue</material>
         </gazebo>
+        <wheel prefix="left" reflect="-1"/>
+        <wheel prefix="right" reflect="1"/>
+        <caster prefix="front" reflect="-1"/>
+        <caster prefix="back" reflect="1"/>
     </xacro:macro>
-    
-        <xacro:wheel prefix="left" reflect="-1"/> 
-        <xacro:wheel prefix="right" reflect="1"/> 
-        <xacro:caster prefix="front" reflect="-1"/> 
-        <xacro:caster prefix="back" reflect="1"/> 
+
 
         <gazebo>
             <plugin name="differential_drive_controller" 
