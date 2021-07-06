@@ -4,3 +4,5 @@
 2.查看RViz机器人模型指令：
 roslaunch mbot_description display_mbot_base_xacro.launch
 
+
+try wether challange
