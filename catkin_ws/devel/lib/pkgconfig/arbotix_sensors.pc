@@ -1,4 +1,4 @@
-prefix=/home/annake/test/catkin_ws/devel
+prefix=/home/ananke/test/catkin_ws/devel
 
 Name: arbotix_sensors
 Description: Description of arbotix_sensors

@@ -1,4 +1,4 @@
-prefix=/home/annake/test/catkin_ws/install
+prefix=/home/ananke/test/catkin_ws/install
 
 Name: arbotix_firmware
 Description: Description of arbotix_firmware

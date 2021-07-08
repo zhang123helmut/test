@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<robot name="camera_model" xmlns:xacro="http://www.ros.org/wiki/xacro" name="camera">
+
+
+  <xacro:include filename="$(find realsense_ros_gazebo)/xacro/tracker.xacro"/>
+  <xacro:include filename="$(find realsense_ros_gazebo)/xacro/depthcam.xacro"/>
+ 
+	<!-- Defining the colors used in this robot -->
+	<material name="White">
+		<color rgba="1 1 1 1"/>
+	</material>
+
+    <!--All units in m-kg-s-radians unit system -->
+    <xacro:property name="M_PI" value="3.1415926535897931" />
+
+
+    <!-- base_support length, width, height and mass -->
+    <xacro:property name="base_support_mass"   value="0.5" /> 
+    <xacro:property name="base_support_width" value="0.2"/>
+    <xacro:property name="base_support_length" value="0.2"/>
+    <xacro:property name="base_support_hight" value="0.005"/>
+
+    <!-- Macro for inertia matrix -->
+   <xacro:macro name="box_inertial_matrix" params="m w h d">
+        <inertial>
+            <mass value="${m}" />
+            <inertia ixx="${m*(h*h+d*d)/12}" ixy = "0" ixz = "0"
+                iyy="${m*(w*w+d*d)/12}" iyz = "0"
+                izz="${m*(w*w+h*h)/12}" /> 
+        </inertial>
+    </xacro:macro>
+    
+ 	<!-- base_support-->
+ 	<xacro:macro name="base_support">   
+    	<link name="base_support">
+	<joint name="footprint_joint" type="fixed">
+	    <parent link="base_footprint"/>
+	    <child link="base_link"/>
+	    <origin rpy="0 0 0" xyz="0 0 0"/>
+	</joint>
+	
+	
+            <inertial>
+                <mass value="0.1" />
+                <origin xyz="0 0 0" />
+                <inertia ixx="0.01" ixy="0.0" ixz="0.0"
+                         iyy="0.01" iyz="0.0"
+                         izz="0.01" />
+            </inertial>
+
+            <visual>
+                <origin xyz=" 0 0 0 " rpy="0 0 0" />
+                <geometry>
+                    <box size="0.01 0.04 0.04" />
+                </geometry>
+                <material name="black"/>
+            </visual>
+
+            <collision>
+                <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+                <geometry>
+                    <box size="0.01 0.04 0.04" />
+                </geometry>
+            </collision>
+        </link>
+        <gazebo reference="${prefix}_link">
+            <material>Gazebo/Black</material>
+        </gazebo>
+	   
+<!-- camera -->
+	<xacro:include filename="$(find packagename)/urdf/_d435.urdf.xacro">
+	 <sensor_d435 parent="${prefix}base_link">
+	 </sensor_d435></xacro:include>
+	 </xacro:include></xacro:include>
+
+    </xacro:macro>
+</robot>
+

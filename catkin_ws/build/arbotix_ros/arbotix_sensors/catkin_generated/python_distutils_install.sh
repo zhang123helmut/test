@@ -13,21 +13,21 @@ fi
 
 echo_and_run() { echo "+ $@" ; "$@" ; }
 
-echo_and_run cd "/home/annake/test/catkin_ws/src/arbotix_ros/arbotix_sensors"
+echo_and_run cd "/home/ananke/test/catkin_ws/src/arbotix_ros/arbotix_sensors"
 
 # ensure that Python install destination exists
-echo_and_run mkdir -p "$DESTDIR/home/annake/test/catkin_ws/install/lib/python3/dist-packages"
+echo_and_run mkdir -p "$DESTDIR/home/ananke/test/catkin_ws/install/lib/python3/dist-packages"
 
 # Note that PYTHONPATH is pulled from the environment to support installing
 # into one location when some dependencies were installed in another
 # location, #123.
 echo_and_run /usr/bin/env \
-    PYTHONPATH="/home/annake/test/catkin_ws/install/lib/python3/dist-packages:/home/annake/test/catkin_ws/build/lib/python3/dist-packages:$PYTHONPATH" \
-    CATKIN_BINARY_DIR="/home/annake/test/catkin_ws/build" \
+    PYTHONPATH="/home/ananke/test/catkin_ws/install/lib/python3/dist-packages:/home/ananke/test/catkin_ws/build/lib/python3/dist-packages:$PYTHONPATH" \
+    CATKIN_BINARY_DIR="/home/ananke/test/catkin_ws/build" \
     "/usr/bin/python3" \
-    "/home/annake/test/catkin_ws/src/arbotix_ros/arbotix_sensors/setup.py" \
+    "/home/ananke/test/catkin_ws/src/arbotix_ros/arbotix_sensors/setup.py" \
      \
-    build --build-base "/home/annake/test/catkin_ws/build/arbotix_ros/arbotix_sensors" \
+    build --build-base "/home/ananke/test/catkin_ws/build/arbotix_ros/arbotix_sensors" \
     install \
     --root="${DESTDIR-/}" \
-    --install-layout=deb --prefix="/home/annake/test/catkin_ws/install" --install-scripts="/home/annake/test/catkin_ws/install/bin"
+    --install-layout=deb --prefix="/home/ananke/test/catkin_ws/install" --install-scripts="/home/ananke/test/catkin_ws/install/bin"

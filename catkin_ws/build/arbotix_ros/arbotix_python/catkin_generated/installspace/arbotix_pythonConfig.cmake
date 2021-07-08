@@ -67,14 +67,14 @@ set(arbotix_python_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(arbotix_python_SOURCE_PREFIX /home/annake/test/catkin_ws/src/arbotix_ros/arbotix_python)
-  set(arbotix_python_DEVEL_PREFIX /home/annake/test/catkin_ws/devel)
+  set(arbotix_python_SOURCE_PREFIX /home/ananke/test/catkin_ws/src/arbotix_ros/arbotix_python)
+  set(arbotix_python_DEVEL_PREFIX /home/ananke/test/catkin_ws/devel)
   set(arbotix_python_INSTALL_PREFIX "")
   set(arbotix_python_PREFIX ${arbotix_python_DEVEL_PREFIX})
 else()
   set(arbotix_python_SOURCE_PREFIX "")
   set(arbotix_python_DEVEL_PREFIX "")
-  set(arbotix_python_INSTALL_PREFIX /home/annake/test/catkin_ws/install)
+  set(arbotix_python_INSTALL_PREFIX /home/ananke/test/catkin_ws/install)
   set(arbotix_python_PREFIX ${arbotix_python_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/annake/test/catkin_ws/install/lib;/home/annake/test/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/ananke/test/catkin_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

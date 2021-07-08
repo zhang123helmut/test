@@ -67,14 +67,14 @@ set(mbot_gazebo_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(mbot_gazebo_SOURCE_PREFIX /home/annake/test/catkin_ws/src/mbot_gazebo)
-  set(mbot_gazebo_DEVEL_PREFIX /home/annake/test/catkin_ws/devel)
+  set(mbot_gazebo_SOURCE_PREFIX /home/ananke/test/catkin_ws/src/mbot_gazebo)
+  set(mbot_gazebo_DEVEL_PREFIX /home/ananke/test/catkin_ws/devel)
   set(mbot_gazebo_INSTALL_PREFIX "")
   set(mbot_gazebo_PREFIX ${mbot_gazebo_DEVEL_PREFIX})
 else()
   set(mbot_gazebo_SOURCE_PREFIX "")
   set(mbot_gazebo_DEVEL_PREFIX "")
-  set(mbot_gazebo_INSTALL_PREFIX /home/annake/test/catkin_ws/install)
+  set(mbot_gazebo_INSTALL_PREFIX /home/ananke/test/catkin_ws/install)
   set(mbot_gazebo_PREFIX ${mbot_gazebo_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/annake/test/catkin_ws/install/lib;/home/annake/test/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/ananke/test/catkin_ws/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

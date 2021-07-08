@@ -1,2 +1,2 @@
-arbotix_ros/arbotix:arbotix_ros/arbotix_controllers:arbotix_ros/arbotix_firmware:arbotix_ros/arbotix_msgs:arbotix_ros/arbotix_python:arbotix_ros/arbotix_sensors:gazebo_ros_demos/gazebo_tutorials:gazebo_ros_demos/rrbot_control:gazebo_ros_demos/rrbot_description:gazebo_ros_demos/rrbot_gazebo:mbot_description:mbot_gazebo
--DCATKIN_DEVEL_PREFIX=/home/annake/test/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/annake/test/catkin_ws/install -G Unix Makefiles
+arbotix_ros/arbotix:arbotix_ros/arbotix_controllers:arbotix_ros/arbotix_firmware:arbotix_ros/arbotix_msgs:arbotix_ros/arbotix_python:arbotix_ros/arbotix_sensors:mbot_description:mbot_gazebo:realsense2_description:realsense_gazebo_plugin
+-DCATKIN_DEVEL_PREFIX=/home/ananke/test/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ananke/test/catkin_ws/install -G Unix Makefiles

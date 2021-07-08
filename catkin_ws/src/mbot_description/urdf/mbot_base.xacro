@@ -17,6 +17,7 @@
     <xacro:property name="caster_joint_x" value="0.18"/>
     <xacro:include filename="materials.xacro" />
 
+    <!-- Macro for inertia matrix-->
     <xacro:macro name="sphere_inertial_matrix" params="m r">
         <inertial>
             <mass value="${m}" />
@@ -35,10 +36,19 @@
                 izz="${m*r*r/2}" /> 
         </inertial>
     </xacro:macro>
+
+    <xacro:macro name="box_inertial_matrix" params="m w h d">
+        <inertial>
+            <mass value="${m}" />
+            <inertia ixx="${m*(h*h+d*d)/12}" ixy = "0" ixz = "0"
+                iyy="${m*(w*w+d*d)/12}" iyz = "0"
+                izz="${m*(w*w+h*h)/12}" /> 
+        </inertial>
+    </xacro:macro>
+
    
     <!--classis motorwheel--> 
-    <!--prefix（left or right） reflect（mirror relationship）-->
-    <xacro:macro name="wheel" params="prefix reflect">
+    <xacro:macro name="wheel" params="prefix reflect"> 
         <joint name="${prefix}_wheel_joint" type="continuous">
             <origin xyz="0 ${reflect*wheel_joint_y} ${-wheel_joint_z}" rpy="0 0 0"/>
             <parent link="base_link"/>
@@ -62,13 +72,14 @@
                 </geometry>
             </collision>
 
-            <cylinder_inertial_matrix  m="${wheel_mass}" r="${wheel_radius}" h="${wheel_length}" />             
+            <xacro:cylinder_inertial_matrix  m="${wheel_mass}" r="${wheel_radius}" h="${wheel_length}" />             
         </link>
 
         <gazebo reference="${prefix}_wheel_link">
             <material>Gazebo/Gray</material>          
         </gazebo>
 
+        <!-- Transmission is important to link the joints and the controller -->
         <transmission name="${prefix}_wheel_joint_trans">
             <type>transmission_interface/SimpleTransmission</type>
             <joint name="${prefix}_wheel_joint" >
@@ -106,7 +117,7 @@
                 </geometry>
             </collision>  
 
-            <sphere_inertial_matrix  m="${caster_mass}" r="${caster_radius}" />
+            <xacro:sphere_inertial_matrix  m="${caster_mass}" r="${caster_radius}" />
         </link>
 
         <gazebo reference="${prefix}_caster_link">
@@ -149,7 +160,7 @@
                     <cylinder length="${base_length}" radius="${base_radius}"/>
                 </geometry>
             </collision>   
-            <cylinder_inertial_matrix  m="${base_mass}" r="${base_radius}" h="${base_length}" />
+            <xacro:cylinder_inertial_matrix  m="${base_mass}" r="${base_radius}" h="${base_length}" />
         </link>
 
         <gazebo reference="base_link">
@@ -162,10 +173,11 @@
         <xacro:caster prefix="front" reflect="-1"/> 
         <xacro:caster prefix="back" reflect="1"/> 
 
+	<!-- controller -->
         <gazebo>
             <plugin name="differential_drive_controller" 
                     filename="libgazebo_ros_diff_drive.so">
-
+		<alwaysOn>true</alwaysOn>
                 <rosDebugLevel>Debug</rosDebugLevel>
                 <publishWheelTF>true</publishWheelTF>
                 <robotNamespace>/</robotNamespace>
@@ -185,6 +197,8 @@
                 <odometryFrame>odom</odometryFrame> 
                 <odometryTopic>odom</odometryTopic>
                 <robotBaseFrame>base_footprint</robotBaseFrame>
+                <publishOdomTF>true</publishOdomTF>
+                <odometrySource> 1</odometrySource> 
             </plugin>
         </gazebo> 
 
